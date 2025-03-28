@@ -8,4 +8,6 @@ import java.util.Map;
 public interface IGithubService {
 
     public List<GithubRepository> searchRepositoryData(List<Map<String, Object>> items);
+
+    public List<GithubRepository> getRepositories(String language, Integer minStars, String sort);
 }

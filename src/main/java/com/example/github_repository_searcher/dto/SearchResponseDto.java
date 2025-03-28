@@ -1,18 +1,19 @@
 package com.example.github_repository_searcher.dto;
 
 import com.example.github_repository_searcher.Entity.GithubRepository;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
 import java.util.List;
 
-//@Data
 public class SearchResponseDto {
     private String message;
     private List<GithubRepository> repositories;
 
     public SearchResponseDto(String message, List<GithubRepository> repositories) {
         this.message = message;
+        this.repositories = repositories;
+    }
+
+    public SearchResponseDto(List<GithubRepository> repositories) {
         this.repositories = repositories;
     }
 

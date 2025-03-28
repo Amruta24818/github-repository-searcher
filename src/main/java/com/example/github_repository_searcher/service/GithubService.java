@@ -25,4 +25,19 @@ public class GithubService implements IGithubService{
         }
         return githubRepository.saveAll(githubRepositoryList);
     }
+
+    @Override
+    public List<GithubRepository> getRepositories(String language, Integer minStars, String sort) {
+        List<GithubRepository> repositories ;
+        if ("stars".equalsIgnoreCase(sort) ) {
+            repositories = githubRepository.findByLanguageOrderByStars(language);
+        } else if ("forks".equalsIgnoreCase(sort)) {
+            repositories = githubRepository.findByLanguageOrderByForksDesc(language);
+        } else if ("updated".equalsIgnoreCase(sort)) {
+            repositories = githubRepository.findByLanguageOrderByLastUpdatedDesc(language);
+        } else {
+            repositories = githubRepository.findByLanguageAndStarsGreaterThanEqual(language, minStars);
+        }
+        return repositories;
+    }
 }

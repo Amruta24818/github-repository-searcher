@@ -1,6 +1,6 @@
 package com.example.github_repository_searcher.controller;
 
-import com.example.github_repository_searcher.Entity.GithubRepository;
+import com.example.github_repository_searcher.model.GithubRepository;
 import com.example.github_repository_searcher.dto.SearchDto;
 import com.example.github_repository_searcher.service.IGithubService;
 import org.junit.jupiter.api.BeforeEach;

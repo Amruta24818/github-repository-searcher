@@ -1,4 +1,4 @@
-package com.example.github_repository_searcher.Entity;
+package com.example.github_repository_searcher.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

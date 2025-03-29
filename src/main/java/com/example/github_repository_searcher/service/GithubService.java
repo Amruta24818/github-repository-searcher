@@ -1,22 +1,23 @@
 package com.example.github_repository_searcher.service;
 
-import com.example.github_repository_searcher.Entity.GithubRepository;
 import com.example.github_repository_searcher.dao.IGithubRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.github_repository_searcher.model.GithubRepository;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 @Service
-public class GithubService implements IGithubService{
+class GithubService implements IGithubService{
 
-    @Autowired
     private IGithubRepository githubRepository;
+
+    public GithubService(IGithubRepository githubRepository) {
+        this.githubRepository = githubRepository;
+    }
 
     @Override
     public List<GithubRepository> searchRepositoryData(List<Map<String, Object>> items) {

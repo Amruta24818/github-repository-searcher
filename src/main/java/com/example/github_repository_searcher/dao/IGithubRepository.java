@@ -1,6 +1,6 @@
 package com.example.github_repository_searcher.dao;
 
-import com.example.github_repository_searcher.Entity.GithubRepository;
+import com.example.github_repository_searcher.model.GithubRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

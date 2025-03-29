@@ -1,18 +1,15 @@
 package com.example.github_repository_searcher.controller;
 
-import com.example.github_repository_searcher.Entity.GithubRepository;
-import com.example.github_repository_searcher.dto.SearchResponseDto;
 import com.example.github_repository_searcher.dto.SearchDto;
+import com.example.github_repository_searcher.dto.SearchResponseDto;
 import com.example.github_repository_searcher.dto.common.ErrorResponseDto;
+import com.example.github_repository_searcher.model.GithubRepository;
 import com.example.github_repository_searcher.service.IGithubService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,15 +18,19 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/github")
-public class RepoController {
+class RepoController {
 
     private static final String BaseUrl = "https://api.github.com/";
 
-    @Autowired
+
     private RestTemplate restTemplate;
 
-    @Autowired
     private IGithubService githubService;
+
+    public RepoController(RestTemplate restTemplate, IGithubService githubService) {
+        this.restTemplate = restTemplate;
+        this.githubService = githubService;
+    }
 
     @PostMapping(value = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> searchAllRepositories(@RequestBody SearchDto searchDto) {

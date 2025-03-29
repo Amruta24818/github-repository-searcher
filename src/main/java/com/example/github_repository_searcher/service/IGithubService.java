@@ -1,6 +1,6 @@
 package com.example.github_repository_searcher.service;
 
-import com.example.github_repository_searcher.Entity.GithubRepository;
+import com.example.github_repository_searcher.model.GithubRepository;
 
 import java.util.List;
 import java.util.Map;

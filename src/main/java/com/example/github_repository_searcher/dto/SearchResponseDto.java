@@ -1,6 +1,6 @@
 package com.example.github_repository_searcher.dto;
 
-import com.example.github_repository_searcher.Entity.GithubRepository;
+import com.example.github_repository_searcher.model.GithubRepository;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;

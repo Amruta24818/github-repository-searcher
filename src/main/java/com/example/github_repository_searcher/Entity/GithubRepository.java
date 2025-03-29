@@ -27,8 +27,22 @@ public class GithubRepository {
     private Integer forks;
     private Timestamp lastUpdated;
 
+    private Timestamp updatedAt;
+
 
     public GithubRepository() {
+    }
+
+    public GithubRepository(Integer id, String name, String description, String owner, String language, Integer stars, Integer forks, Timestamp lastUpdated, Timestamp updatedAt) {
+        Id = id;
+        this.name = name;
+        this.description = description;
+        this.owner = owner;
+        this.language = language;
+        this.stars = stars;
+        this.forks = forks;
+        this.lastUpdated = lastUpdated;
+        this.updatedAt = updatedAt;
     }
 
     public GithubRepository(Integer id, String name, String description, String owner, String language, Integer stars, Integer forks, Timestamp lastUpdated) {

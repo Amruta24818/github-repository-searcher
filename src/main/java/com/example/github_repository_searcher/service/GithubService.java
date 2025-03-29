@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +22,7 @@ public class GithubService implements IGithubService{
     public List<GithubRepository> searchRepositoryData(List<Map<String, Object>> items) {
         List<GithubRepository> githubRepositoryList = new ArrayList<>();
         for(Map<String, Object> item: items){
-             githubRepositoryList.add(new GithubRepository((Integer) item.get("id"), (String) item.get("name"), (String) item.get("description"), (String)((Map) item.get("owner")).get("login"), (String) item.get("language"), (Integer) item.get("stargazers_count"), (Integer) item.get("forks_count"),Timestamp.from(Instant.parse((CharSequence) item.get("updated_at")))));
+             githubRepositoryList.add(new GithubRepository((Integer) item.get("id"), (String) item.get("name"), (String) item.get("description"), (String)((Map) item.get("owner")).get("login"), (String) item.get("language"), (Integer) item.get("stargazers_count"), (Integer) item.get("forks_count"),Timestamp.from(Instant.parse((CharSequence) item.get("updated_at"))), Timestamp.from(Instant.now())));
         }
         return githubRepository.saveAll(githubRepositoryList);
     }

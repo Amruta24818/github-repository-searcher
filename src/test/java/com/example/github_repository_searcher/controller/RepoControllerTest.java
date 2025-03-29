@@ -13,6 +13,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.client.RestTemplate;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -51,7 +53,7 @@ public class RepoControllerTest {
         searchDto.setSort("stars");
 
         mockRepositoryList = new ArrayList<>();
-        mockRepositoryList.add(new GithubRepository(1, "Repo 1", "Description", "owner", "Java", 100, 50, null));
+        mockRepositoryList.add(new GithubRepository(1, "Repo 1", "Description", "owner", "Java", 100, 50, null, Timestamp.from(Instant.now())));
     }
 
     @Test

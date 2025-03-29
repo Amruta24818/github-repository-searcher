@@ -1,9 +1,11 @@
 package com.example.github_repository_searcher.dto;
 
 import com.example.github_repository_searcher.Entity.GithubRepository;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class SearchResponseDto {
     private String message;
     private List<GithubRepository> repositories;
